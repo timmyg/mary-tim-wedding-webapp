@@ -15,6 +15,8 @@ const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin
 const HtmlElementsPlugin = require('./html-elements-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
+const ProvidePlugin = require('webpack/lib/ProvidePlugin');
+const autoprefixer = require('autoprefixer');
 
 /*
  * Webpack Constants
@@ -77,7 +79,7 @@ module.exports = function(options) {
        *
        * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
        */
-      extensions: ['', '.ts', '.js', '.json'],
+      extensions: ['', '.ts', '.js', '.json', '.scss'],
 
       // An array of directory names to be resolved to the current directory
       modules: [helpers.root('src'), 'node_modules'],
@@ -175,10 +177,16 @@ module.exports = function(options) {
           loader: 'file'
         },
         {
-          test: /\.pug$/, 
+          test: /\.pug$/,
           loader: 'pug-html-loader'
-        }
+        },
+        { test: /\.scss$/, loaders: ['style', 'css', 'postcss', 'sass'] },
+        { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
+        // Bootstrap 4
+        { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' }
       ],
+
+      postcss: [autoprefixer], // <--- postcss
 
       postLoaders: [
         {
@@ -236,6 +244,14 @@ module.exports = function(options) {
         /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
         helpers.root('src') // location of your src
       ),
+
+      new ProvidePlugin({
+          jQuery: 'jquery',
+          $: 'jquery',
+          jquery: 'jquery',
+          "Tether": 'tether',
+          "window.Tether": "tether"
+      }),
 
       /*
        * Plugin: CopyWebpackPlugin
