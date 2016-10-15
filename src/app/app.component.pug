@@ -1,0 +1,16 @@
+nav
+  a([routerLink]="['./']") Index
+  a([routerLink]="['./home']") Home
+  a([routerLink]="['./detail']") Detail
+  a([routerLink]="['./about']") About
+main
+  router-outlet
+pre.app-state.
+  \nthis.appState.state = {{ appState.state | json }}
+footer
+  span
+    | WebPack Angular 2 Starter by
+    a([href]='url') @AngularClass
+  div
+    a([href]='url')
+      img([src]='angularclassLogo', width='25%')

@@ -14,8 +14,7 @@ console.log('`About` component loaded asynchronously');
   styleUrls: [
     './about.scss'
   ],
-  template: require('./about.pug'),
-  // encapsulation: ViewEncapsulation.None,
+  template: require('./about.pug')
 })
 export class About {
   localState: any;
