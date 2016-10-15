@@ -180,13 +180,23 @@ module.exports = function(options) {
           test: /\.pug$/,
           loader: 'pug-html-loader'
         },
-        { test: /\.scss$/, loaders: ['style', 'css', 'postcss', 'sass'] },
+        // { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
+        // {
+        //   test: /\.scss$/,
+        //   exclude: /node_modules/,
+        //   loader: 'style-loader!css-loader!sass-loader'
+        // },
+        {
+          test: /\.scss$/, 
+          exclude: /node_modules/,
+          loaders: ['raw-loader', 'sass-loader', 'resolve-url']
+        },
         { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
         // Bootstrap 4
         { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' }
       ],
 
-      postcss: [autoprefixer], // <--- postcss
+      // postcss: [autoprefixer], // <--- postcss
 
       postLoaders: [
         {

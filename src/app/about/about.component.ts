@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+// import { ViewEncapsulation } from '@angular/core';
 /*
  * We're loading this component asynchronously
  * We are using some magic with es6-promise-loader that will wrap the module with a Promise
@@ -10,9 +11,11 @@ console.log('`About` component loaded asynchronously');
 
 @Component({
   selector: 'about',
-  styles: [`
-  `],
-  template: require('./about.pug')
+  styleUrls: [
+    './about.scss'
+  ],
+  template: require('./about.pug'),
+  // encapsulation: ViewEncapsulation.None,
 })
 export class About {
   localState: any;
