@@ -1,8 +1,18 @@
-nav
-  a([routerLink]="['./']") Index
-  a([routerLink]="['./home']") Home
-  a([routerLink]="['./detail']") Detail
-  a([routerLink]="['./about']") About
+nav.navbar.navbar-light.main.nav
+  div.container.text-xs-center
+    ul.nav.navbar-nav.pull-xs-left
+      li.nav-item
+        a.nav-link([routerLink]="['./about']") About
+      li.nav-item
+        a.nav-link([routerLink]="['./about']") About
+    ul.nav.navbar-nav
+      li.nav-item
+        a.nav-link([routerLink]="['./']") Website Name
+    ul.nav.navbar-nav.pull-xs-right
+      li.nav-item
+        a.nav-link([routerLink]="['./about']") About
+      li.nav-item
+        a.nav-link([routerLink]="['./about']") About
 main
   router-outlet
 pre.app-state.

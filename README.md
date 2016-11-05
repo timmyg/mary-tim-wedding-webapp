@@ -1,6 +1,6 @@
 ## Install dependencies
 ```bash
-npm i
+yarn upgrade
 ```
 
 ## Running the app
