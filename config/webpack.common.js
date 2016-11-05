@@ -17,6 +17,7 @@ const AssetsPlugin = require('assets-webpack-plugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 /*
  * Webpack Constants
@@ -189,7 +190,13 @@ module.exports = function(options) {
         {
           test: /\.scss$/,
           exclude: /node_modules/,
-          loaders: ['raw-loader', 'sass-loader', 'resolve-url']
+          // loaders: ['raw-loader', 'sass-loader', 'resolve-url']
+          loader: ExtractTextPlugin.extract(
+            'style',
+            'css?modules&importLoaders=2&localIdentName=[name]__[local]__[hash:base64:5]' +
+            '!sass' +
+            // '!sass-resources'
+          )
         },
         { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
         // Bootstrap 4
