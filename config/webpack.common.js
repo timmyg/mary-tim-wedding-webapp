@@ -187,13 +187,13 @@ module.exports = function(options) {
         //   loader: 'style-loader!css-loader!sass-loader'
         // },
         {
-          test: /\.scss$/, 
+          test: /\.scss$/,
           exclude: /node_modules/,
           loaders: ['raw-loader', 'sass-loader', 'resolve-url']
         },
         { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
         // Bootstrap 4
-        { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' }
+        { test: /bootstrap\/dist\/js\/umd/, loader: 'imports?jQuery=jquery' }
       ],
 
       // postcss: [autoprefixer], // <--- postcss
@@ -221,6 +221,26 @@ module.exports = function(options) {
         path: helpers.root('dist'),
         filename: 'webpack-assets.json',
         prettyPrint: true
+      }),
+
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery",
+        Tether: "tether",
+        "window.Tether": "tether",
+        Tooltip: "exports?Tooltip!bootstrap/js/dist/tooltip",
+        Alert: "exports?Alert!bootstrap/js/dist/alert",
+        Button: "exports?Button!bootstrap/js/dist/button",
+        Carousel: "exports?Carousel!bootstrap/js/dist/carousel",
+        Collapse: "exports?Collapse!bootstrap/js/dist/collapse",
+        Dropdown: "exports?Dropdown!bootstrap/js/dist/dropdown",
+        Modal: "exports?Modal!bootstrap/js/dist/modal",
+        Popover: "exports?Popover!bootstrap/js/dist/popover",
+        Scrollspy: "exports?Scrollspy!bootstrap/js/dist/scrollspy",
+        Tab: "exports?Tab!bootstrap/js/dist/tab",
+        Tooltip: "exports?Tooltip!bootstrap/js/dist/tooltip",
+        Util: "exports?Util!bootstrap/js/dist/util",
       }),
 
       /*

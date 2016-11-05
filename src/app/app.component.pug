@@ -1,18 +1,45 @@
-nav.navbar.navbar-light.main.nav
-  div.container.text-xs-center
-    ul.nav.navbar-nav.pull-xs-left
-      li.nav-item
-        a.nav-link([routerLink]="['./about']") About
-      li.nav-item
-        a.nav-link([routerLink]="['./about']") About
+//
+  nav.navbar.navbar-light.main.nav
+    div.container.text-xs-center
+      ul.nav.navbar-nav.pull-xs-left
+        li.nav-item
+          a.nav-link([routerLink]="['./about']") About
+        li.nav-item
+          a.nav-link([routerLink]="['./about']") About
+      ul.nav.navbar-nav
+        li.nav-item
+          a.nav-link([routerLink]="['./']") Website Name
+      ul.nav.navbar-nav.pull-xs-right
+        li.nav-item
+          a.nav-link([routerLink]="['./about']") About
+        li.nav-item
+          a.nav-link([routerLink]="['./about']") About
+
+nav.navbar.navbar-light.bg-faded
+  button.navbar-toggler.hidden-lg-up(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+  #navbarResponsive.collapse.navbar-toggleable-md
+    a.navbar-brand(href='#') Navbar
     ul.nav.navbar-nav
+      li.nav-item.active
+        a.nav-link(href='#') Home
+          span.sr-only (current)
       li.nav-item
-        a.nav-link([routerLink]="['./']") Website Name
-    ul.nav.navbar-nav.pull-xs-right
+        a.nav-link(href='#') Link
       li.nav-item
-        a.nav-link([routerLink]="['./about']") About
-      li.nav-item
-        a.nav-link([routerLink]="['./about']") About
+        a.nav-link(href='#') Link
+      li.nav-item.dropdown
+        a#responsiveNavbarDropdown.nav-link.dropdown-toggle(href='http://example.com', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Dropdown
+        .dropdown-menu(aria-labelledby='responsiveNavbarDropdown')
+          a.dropdown-item(href='#') Action
+          a.dropdown-item(href='#') Another action
+          a.dropdown-item(href='#') Something else here
+    form.form-inline.float-lg-right
+      input.form-control(type='text', placeholder='Search')
+      button.btn.btn-outline-success(type='submit') Search
+
+
+
+
 main
   router-outlet
 pre.app-state.
