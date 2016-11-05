@@ -7,16 +7,16 @@ import { ActivatedRoute } from '@angular/router';
  * see https://github.com/gdi2290/es6-promise-loader for more info
  */
 
-console.log('`About` component loaded asynchronously');
+console.log('`Registry` component loaded asynchronously');
 
 @Component({
-  selector: 'about',
+  selector: 'registry',
   styleUrls: [
-    './about.scss'
+    './registry.scss'
   ],
-  template: require('./about.pug')
+  template: require('./registry.pug')
 })
-export class About {
+export class Registry {
   localState: any;
   constructor(public route: ActivatedRoute) {
 
@@ -30,7 +30,7 @@ export class About {
         this.localState = data.yourData;
       });
 
-    console.log('hello `About` component');
+    console.log('hello `Registry` component');
     // static data that is bundled
     // var mockData = require('assets/mock-data/mock-data.json');
     // console.log('mockData', mockData);

@@ -1,3 +1,8 @@
 .navbar {
-  background: yellow;
+  background: transparent;
+  .navbar-nav {
+    .nav-item {
+      margin: 0 20px;
+    }
+  }
 }

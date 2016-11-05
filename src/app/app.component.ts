@@ -18,9 +18,10 @@ import { AppState } from './app.service';
   template: require('./app.component.pug')
 })
 export class App {
-  angularclassLogo = 'assets/img/angularclass-avatar.png';
+  // angularclassLogo = 'assets/img/angularclass-avatar.png';
+  angularclassLogo = 'http://placehold.it/70x70';
   name = 'Angular 2 Webpack Starter';
-  url = 'https://twitter.com/AngularClass';
+  url = '/';
 
   constructor(
     public appState: AppState) {
