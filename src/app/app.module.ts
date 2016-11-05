@@ -15,6 +15,8 @@ import { App } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { Home } from './home';
+import { Story } from './story';
+import { Wedding } from './wedding';
 import { Registry } from './registry';
 import { NoContent } from './no-content';
 import { XLarge } from './home/x-large';
@@ -38,8 +40,10 @@ type StoreType = {
   bootstrap: [ App ],
   declarations: [
     App,
-    Registry,
     Home,
+    Story,
+    Wedding,
+    Registry,
     NoContent,
     XLarge
   ],

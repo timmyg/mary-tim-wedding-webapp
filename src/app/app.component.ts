@@ -21,7 +21,7 @@ export class App {
   // angularclassLogo = 'assets/img/angularclass-avatar.png';
   angularclassLogo = 'http://placehold.it/70x70';
   name = 'Angular 2 Webpack Starter';
-  url = '/';
+  url = '/#';
 
   constructor(
     public appState: AppState) {

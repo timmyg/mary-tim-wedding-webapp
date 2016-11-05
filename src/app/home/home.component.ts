@@ -16,7 +16,8 @@ import { XLarge } from './x-large';
   // Our list of styles in our component. We may add more to compose many styles together
   styleUrls: [ './home.component.css' ],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
-  templateUrl: './home.component.html'
+  // templateUrl: './home.component.html'
+  template: require('./home.component.pug')
 })
 export class Home {
   // Set our default values
