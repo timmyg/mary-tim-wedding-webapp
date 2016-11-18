@@ -1,29 +1,18 @@
-nav.navbar.navbar-light.bg-faded
+nav.navbar.bg-faded
   button.navbar-toggler.hidden-lg-up(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
   #navbarResponsive.collapse.navbar-toggleable-md
     ul.nav.navbar-nav.col-lg-5.d-inline-block.text-lg-right
       li.nav-item.float-lg-right
-        a.nav-link([routerLink]="['./our-story']") Our Story
+        a.nav-link([routerLink]="['./our-story']" routerLinkActive='active') Our Story
       li.nav-item.float-lg-right
-        a.nav-link([routerLink]="['./our-wedding']") Our Wedding
+        a.nav-link([routerLink]="['./our-wedding']" routerLinkActive='active') Our Wedding
     div.nav.navbar-nav.col-lg-2.d-inline-block.text-lg-center
-      a([href]='url').h2.text-white Mary + Tim
+      a([href]='url').h2.text-white.text-fancy Mary + Tim
         //- img.rounded-circle([src]='angularclassLogo')
     ul.nav.navbar-nav.col-lg-5.d-inline-block.text-lg-left
       li.nav-item
-        a.nav-link([routerLink]="['./details']") Details
+        a.nav-link([routerLink]="['./details']" routerLinkActive='active') Details
       li.nav-item
-        a.nav-link([routerLink]="['./registry']") Registry
-
-
-
-
+        a.nav-link([routerLink]="['./registry']" routerLinkActive='active') Registry
 main
   router-outlet
-//- pre.app-state.
-//-   \nthis.appState.state = {{ appState.state | json }}
-//- footer
-//-   span
-//-     | WebPack Angular 2 Starter by
-//-     a([href]='url') @AngularClass
-//-   div
