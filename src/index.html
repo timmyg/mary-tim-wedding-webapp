@@ -7,6 +7,9 @@
 
   <title><%= webpackConfig.metadata.title %></title>
 
+  <link rel="icon" type="image/png" href="<%= webpackConfig.metadata.baseUrl %>assets/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="<%= webpackConfig.metadata.baseUrl %>assets/favicon-16x16.png" sizes="16x16" />
+
   <meta name="description" content="<%= webpackConfig.metadata.title %>">
 
   <% if (webpackConfig.htmlElements.headTags) { %>
@@ -17,6 +20,70 @@
   <!-- base url -->
   <base href="<%= webpackConfig.metadata.baseUrl %>">
 
+  <style media="screen">
+
+    .loader,
+    .loader:before,
+    .loader:after {
+      background: #8ac5ff;
+      -webkit-animation: load1 1s infinite ease-in-out;
+      animation: load1 1s infinite ease-in-out;
+      width: 1em;
+      height: 4em;
+    }
+    .loader {
+      color: #8ac5ff;
+      text-indent: -9999em;
+      margin: 88px auto;
+      position: relative;
+      font-size: 11px;
+      -webkit-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-animation-delay: -0.16s;
+      animation-delay: -0.16s;
+    }
+    .loader:before,
+    .loader:after {
+      position: absolute;
+      top: 0;
+      content: '';
+    }
+    .loader:before {
+      left: -1.5em;
+      -webkit-animation-delay: -0.32s;
+      animation-delay: -0.32s;
+    }
+    .loader:after {
+      left: 1.5em;
+    }
+    @-webkit-keyframes load1 {
+      0%,
+      80%,
+      100% {
+        box-shadow: 0 0;
+        height: 4em;
+      }
+      40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+      }
+    }
+    @keyframes load1 {
+      0%,
+      80%,
+      100% {
+        box-shadow: 0 0;
+        height: 4em;
+      }
+      40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+      }
+    }
+
+
+  </style>
   <style media="screen">
     html, body {
       height: 100%;
@@ -35,7 +102,7 @@
 <body>
 
   <app>
-    Loading...
+    <div class="loader">Loading...</div>
   </app>
 
   <!-- Google Analytics: change UA-71073175-1 to be your site's ID -->

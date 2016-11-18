@@ -90,8 +90,6 @@
     "@types/node": "^6.0.38",
     "@types/protractor": "^1.5.20",
     "@types/selenium-webdriver": "2.44.29",
-    "@types/source-map": "^0.1.27",
-    "@types/uglify-js": "^2.0.27",
     "@types/webpack": "^1.12.34",
     "angular2-template-loader": "^0.5.0",
     "awesome-typescript-loader": "^2.2.1",
