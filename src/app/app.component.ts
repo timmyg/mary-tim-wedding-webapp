@@ -5,6 +5,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AppState } from './app.service';
+import * as WOW from 'wow.js/dist/wow.js';
 
 /*
  * App Component
@@ -30,10 +31,10 @@ export class App {
 
   ngOnInit() {
     console.log('Initial App State', this.appState.state);
+    new WOW().init();
   }
 
   isLightHeader() {
-    console.log(this.router.url === '/registry')
     // return this.router.url === '/registry' || this.router.url === '/details';
     return this.router.url === '/registry';
   }

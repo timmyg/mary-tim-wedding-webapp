@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 // import { ViewEncapsulation } from '@angular/core';
+import * as WOW from 'wow.js/dist/wow.js';
+
 /*
  * We're loading this component asynchronously
  * We are using some magic with es6-promise-loader that will wrap the module with a Promise
@@ -23,6 +25,8 @@ export class Registry {
   }
 
   ngOnInit() {
+    console.log("WOW", WOW)
+    new WOW().init();
     this.route
       .data
       .subscribe((data: any) => {

@@ -180,6 +180,10 @@ angular2-template-loader@^0.5.0:
     codecov "^1.0.1"
     loader-utils "^0.2.15"
 
+animate.css:
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.5.2.tgz#91e668dc069a808e5e499514867b97aae0166c36"
+
 ansi-regex@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.0.0.tgz#c5061b6e0ef8a81775e50f5d66151bf6bf371107"
@@ -5549,6 +5553,10 @@ wordwrap@~0.0.2:
 wordwrap@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.2.tgz#b79669bb42ecb409f83d583cad52ca17eaa1643f"
+
+wow.js:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/wow.js/-/wow.js-1.2.2.tgz#247519b0a342319b1a63e22aea9acec1a9ea57f5"
 
 wrap-ansi@^2.0.0:
   version "2.0.0"
