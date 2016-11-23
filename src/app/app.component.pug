@@ -1,4 +1,4 @@
-nav.navbar.bg-faded
+nav.navbar([ngClass]="{'bg': isLightHeader()}")
   button.navbar-toggler.hidden-lg-up(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
   #navbarResponsive.collapse.navbar-toggleable-md
     ul.nav.navbar-nav.col-lg-5.d-inline-block.text-lg-right

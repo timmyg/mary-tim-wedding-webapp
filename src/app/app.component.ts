@@ -2,6 +2,7 @@
  * Angular 2 decorators and services
  */
 import { Component, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AppState } from './app.service';
 
@@ -22,12 +23,19 @@ export class App {
   url = '/#';
 
   constructor(
-    public appState: AppState) {
+    public appState: AppState,
+    public router: Router) {
 
   }
 
   ngOnInit() {
     console.log('Initial App State', this.appState.state);
+  }
+
+  isLightHeader() {
+    console.log(this.router.url === '/registry')
+    // return this.router.url === '/registry' || this.router.url === '/details';
+    return this.router.url === '/registry';
   }
 
 }
