@@ -2,6 +2,8 @@
 $font-primary: 'IM Fell Double Pica SC'; // Poiret One, Text Me One, IM Fell Double Pica SC
 $font-fancy: 'Dancing Script';
 @import url('https://fonts.googleapis.com/css?family=#{str-replace($font-primary, " ", "+")}|#{str-replace($font-fancy, " ", "+")}');
+@import '~bootstrap/scss/_variables.scss';
+@import '~bootstrap/scss/mixins/_breakpoints.scss';
 
 * {
   font-family: $font-primary;
@@ -27,8 +29,16 @@ a {
 
 header {
   background-image: url(http://placehold.it/1750x550);
-  background-size: cover;
   height: 510px;
+  background-size: cover;
+  background-position-y: 50%;
+}
+
+@include media-breakpoint-up(lg) {
+  header {
+    height: 710px;
+    // background-position-y: 30%;
+  }
 }
 
 nav.navbar {
