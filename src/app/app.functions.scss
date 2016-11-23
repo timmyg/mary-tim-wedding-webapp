@@ -7,3 +7,11 @@
 
   @return $string;
 }
+
+
+/* Preloaded images */
+$preloaded-images: null;
+@function preload-image($image-path) {
+  $preloaded-images: $preloaded-images url($image-path) !global;
+  @return $preloaded-images;
+}

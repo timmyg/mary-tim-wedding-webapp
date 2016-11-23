@@ -1,4 +1,4 @@
-@import 'app.functions';
+@import 'app.functions', 'app.mixins';
 $font-primary: 'IM Fell Double Pica SC'; // Poiret One, Text Me One, IM Fell Double Pica SC
 $font-fancy: 'Dancing Script';
 @import url('https://fonts.googleapis.com/css?family=#{str-replace($font-primary, " ", "+")}|#{str-replace($font-fancy, " ", "+")}');
@@ -62,4 +62,21 @@ nav.navbar {
       }
     }
   }
+}
+
+// body::after{
+//     position:absolute;
+//     width:0;
+//     height:0;
+//     overflow:hidden;
+//     z-index:-1;
+//     content: url(/assets/img/otr.png) url(img02.png) url(img03.png) url(img04.png);
+// }
+
+//preload images
+body::after {
+  @include background-image('/assets/img/otr.png');
+  display: none;
+  content: $preloaded-images;
+  // content: url(/assets/img/otr.png);
 }

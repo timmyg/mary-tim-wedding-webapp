@@ -1,0 +1,6 @@
+@import 'app.functions';
+
+@mixin background-image($img-path) {
+  background-image: url($img-path);
+  $tmp: preload-image($img-path);
+}
