@@ -24,7 +24,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
  */
 const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
-  title: 'Angular2 Webpack Starter by @gdi2290 from @AngularClass',
+  title: 'Mary + Tim Giblin Wedding',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
