@@ -1,4 +1,4 @@
-@import 'app.functions', 'app.mixins';
+@import 'app.functions', 'app.mixins', 'app.images';
 $font-primary: 'IM Fell Double Pica SC'; // Poiret One, Text Me One, IM Fell Double Pica SC
 $font-fancy: 'Dancing Script';
 @import url('https://fonts.googleapis.com/css?family=#{str-replace($font-primary, " ", "+")}|#{str-replace($font-fancy, " ", "+")}');
@@ -45,8 +45,12 @@ nav.navbar {
   background: transparent;
   position: absolute;
   width: 100%;
-  &.bg {
+  &.bg-light {
     background: linear-gradient(to bottom, rgba(201,201,201,1), rgba(255,0,0,0));
+    padding-bottom: 120px;
+  }
+  &.bg-dark {
+    background: linear-gradient(to bottom, #565656, rgba(255,0,0,0));
     padding-bottom: 120px;
   }
   .navbar-nav {
@@ -64,19 +68,7 @@ nav.navbar {
   }
 }
 
-// body::after{
-//     position:absolute;
-//     width:0;
-//     height:0;
-//     overflow:hidden;
-//     z-index:-1;
-//     content: url(/assets/img/otr.png) url(img02.png) url(img03.png) url(img04.png);
-// }
-
-//preload images
 body::after {
-  @include background-image('/assets/img/otr.png');
   display: none;
   content: $preloaded-images;
-  // content: url(/assets/img/otr.png);
 }

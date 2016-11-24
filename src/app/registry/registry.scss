@@ -1,11 +1,5 @@
-@import '../app.mixins';
+@import '../app.images';
 
 header {
-  @include background-image('/assets/img/otr.png');
-  // background-image: -webkit-linear-gradient(left,
-  //   #fff 0%,
-  //   rgba(0,0,0,0) 20%,
-  //   rgba(0,0,0,0) 80%,
-  //   rgba(0,0,0,0) 100%   ),
-  //   @include background-image(/assets/img/otr.png);
+  background-image: $img-otr;
 }

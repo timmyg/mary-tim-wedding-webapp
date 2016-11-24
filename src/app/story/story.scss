@@ -1,5 +1,7 @@
+@import '../app.images';
+
 header {
-  background-image: url('/assets/img/ivy.png');
+  background-image: $img-ivy;
 }
 
 .wrapper {

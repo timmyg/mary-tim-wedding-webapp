@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 // import { ViewEncapsulation } from '@angular/core';
-import * as WOW from 'wow.js/dist/wow.js';
 
 /*
  * We're loading this component asynchronously
@@ -25,7 +24,6 @@ export class Registry {
   }
 
   ngOnInit() {
-    console.log("WOW", WOW)
     new WOW().init();
     this.route
       .data

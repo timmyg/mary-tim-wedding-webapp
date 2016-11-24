@@ -1,5 +1,7 @@
+@import '../app.images';
+
 section {
-  background-image: url('/assets/img/field.png');
+  background-image: $img-field;
   background-size: cover;
   background-position-y: -100px;
   background-repeat: no-repeat;

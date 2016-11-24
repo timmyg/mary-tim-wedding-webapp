@@ -23,6 +23,7 @@ export class Story {
   }
 
   ngOnInit() {
+    new WOW().init();
     this.route
       .data
       .subscribe((data: any) => {
