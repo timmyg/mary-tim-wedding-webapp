@@ -22,7 +22,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 
 import 'jquery';
-import 'animate.css';
 import 'bootstrap-loader';
 
 if ('production' === ENV) {
