@@ -24,6 +24,7 @@ export class Registry {
   }
 
   ngOnInit() {
+    let WOW: any;
     new WOW().init();
     this.route
       .data
