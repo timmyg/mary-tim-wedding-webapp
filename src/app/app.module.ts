@@ -18,6 +18,7 @@ import { Home } from './home';
 import { Story } from './story';
 import { Wedding } from './wedding';
 import { Registry } from './registry';
+import { Proposal } from './proposal';
 import { NoContent } from './no-content';
 import { XLarge } from './home/x-large';
 
@@ -46,6 +47,7 @@ type StoreType = {
     Story,
     Wedding,
     Registry,
+    Proposal,
     NoContent,
     XLarge
   ],

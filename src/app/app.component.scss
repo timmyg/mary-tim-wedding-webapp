@@ -1,7 +1,8 @@
 @import 'app.functions', 'app.mixins', 'app.images';
-$font-primary: 'IM Fell Double Pica SC'; // Poiret One, Text Me One, IM Fell Double Pica SC
+$font-primary: 'Raleway'; // Poiret One, Text Me One, IM Fell Double Pica SC
 $font-fancy: 'Dancing Script';
-@import url('https://fonts.googleapis.com/css?family=#{str-replace($font-primary, " ", "+")}|#{str-replace($font-fancy, " ", "+")}');
+$font-fancy-alternate: 'IM Fell Double Pica SC';
+@import url('https://fonts.googleapis.com/css?family=#{str-replace($font-primary, " ", "+")}|#{str-replace($font-fancy, " ", "+")}|#{str-replace($font-fancy-alternate, " ", "+")}');
 @import '~bootstrap/scss/_variables.scss';
 @import '~bootstrap/scss/mixins/_breakpoints.scss';
 
@@ -13,6 +14,10 @@ $font-fancy: 'Dancing Script';
 
 .text-fancy {
   font-family: $font-fancy;
+}
+
+.text-fancy-alternate {
+  font-family: $font-fancy-alternate;
 }
 
 a {
@@ -47,7 +52,7 @@ nav.navbar {
   width: 100%;
   &.bg-light {
     background: linear-gradient(to bottom, rgba(201,201,201,1), rgba(255,0,0,0));
-    padding-bottom: 120px;
+    padding-bottom: 40px;
   }
   &.bg-dark {
     background: linear-gradient(to bottom, #565656, rgba(255,0,0,0));

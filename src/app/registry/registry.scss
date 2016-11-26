@@ -3,3 +3,18 @@
 header {
   background-image: $img-otr;
 }
+
+.coming-soon {
+  text-align: center;
+  position: absolute;
+  margin: auto;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 60px;
+  &~ div {
+    opacity: .02;
+  }
+}

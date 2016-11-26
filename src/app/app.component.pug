@@ -3,15 +3,17 @@ nav.navbar([ngClass]="{'bg-light': isLightHeader(), 'bg-dark': isDarkHeader()}")
   #navbarResponsive.collapse.navbar-toggleable-md
     ul.nav.navbar-nav.col-lg-5.d-inline-block.text-lg-right
       li.nav-item.float-lg-right
-        a.nav-link([routerLink]="['./our-story']" routerLinkActive='active') Our Story
+        a.nav-link.text-fancy-alternate([routerLink]="['./our-story']" routerLinkActive='active') Our Story
       li.nav-item.float-lg-right
-        a.nav-link([routerLink]="['./our-wedding']" routerLinkActive='active') Our Wedding
+        a.nav-link.text-fancy-alternate([routerLink]="['./our-wedding']" routerLinkActive='active') Our Wedding
+      li.nav-item.float-lg-right
+        a.nav-link.text-fancy-alternate([routerLink]="['./the-proposal']" routerLinkActive='active') The Proposal
     div.navbar-nav.col-lg-2.d-inline-block.text-lg-center
       a([href]='url').h2.text-white.text-fancy Mary + Tim
     ul.nav.navbar-nav.col-lg-5.d-inline-block.text-lg-left
       li.nav-item
-        a.nav-link([routerLink]="['./details']" routerLinkActive='active') Details
+        a.nav-link.text-fancy-alternate([routerLink]="['./details']" routerLinkActive='active') Details
       li.nav-item
-        a.nav-link([routerLink]="['./registry']" routerLinkActive='active') Registry
+        a.nav-link.text-fancy-alternate([routerLink]="['./registry']" routerLinkActive='active') Registry
 main
   router-outlet

@@ -25,68 +25,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
   <style media="screen">
-
-    .loader,
-    .loader:before,
-    .loader:after {
-      background: #8ac5ff;
-      -webkit-animation: load1 1s infinite ease-in-out;
-      animation: load1 1s infinite ease-in-out;
-      width: 1em;
-      height: 4em;
-    }
-    .loader {
-      color: #8ac5ff;
-      text-indent: -9999em;
-      margin: 88px auto;
-      position: relative;
-      font-size: 11px;
-      -webkit-transform: translateZ(0);
-      -ms-transform: translateZ(0);
-      transform: translateZ(0);
-      -webkit-animation-delay: -0.16s;
-      animation-delay: -0.16s;
-    }
-    .loader:before,
-    .loader:after {
-      position: absolute;
-      top: 0;
-      content: '';
-    }
-    .loader:before {
-      left: -1.5em;
-      -webkit-animation-delay: -0.32s;
-      animation-delay: -0.32s;
-    }
-    .loader:after {
-      left: 1.5em;
-    }
-    @-webkit-keyframes load1 {
-      0%,
-      80%,
-      100% {
-        box-shadow: 0 0;
-        height: 4em;
-      }
-      40% {
-        box-shadow: 0 -2em;
-        height: 5em;
-      }
-    }
-    @keyframes load1 {
-      0%,
-      80%,
-      100% {
-        box-shadow: 0 0;
-        height: 4em;
-      }
-      40% {
-        box-shadow: 0 -2em;
-        height: 5em;
-      }
-    }
-
-
+  .cp-spinner{width:48px;height:48px;display:inline-block;box-sizing:border-box;position:relative}.cp-hue{width:24px;height:24px;display:inline-block;box-sizing:border-box;background:#f56151;border-radius:50%;animation:cp-hue-animate 1s ease-in-out infinite}.cp-hue:before{border-radius:0 12px 12px 0;content:" ";width:12px;height:24px;display:inline-block;box-sizing:border-box;background:#fff;position:absolute;top:0;right:0;animation:cp-hue-animate-before 1s ease-in-out infinite}@keyframes cp-hue-animate{0%{background:#4ea3e5}25%{background:#f9d4ee}50%{background:#9effc9}75%{background:#ffe89e}100%{background:#4ea3e5}}@keyframes cp-hue-animate-before{0%{transform:rotateY(0);transform-origin:left center;opacity:.5}30%,70%{transform:rotateY(180deg);transform-origin:left center;opacity:.2}100%{transform:rotateY(0);opacity:.5}}
   </style>
   <style media="screen">
     html, body {
@@ -106,7 +45,10 @@
 <body>
 
   <app>
-    <div class="loader">Loading...</div>
+    <div class="loader" style="text-align: center;margin-top: 48vh;">
+      <!-- Loading... -->
+      <div class="cp-spinner cp-hue"></div>
+    </div>
   </app>
 
   <!-- Google Analytics: change UA-71073175-1 to be your site's ID -->

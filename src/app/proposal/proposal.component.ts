@@ -10,20 +10,19 @@ import { ActivatedRoute } from '@angular/router';
 console.log('`Story` component loaded asynchronously');
 
 @Component({
-  selector: 'story',
+  selector: 'proposal',
   styleUrls: [
-    './story.scss'
+    './proposal.scss'
   ],
-  template: require('./story.component.pug')
+  template: require('./proposal.component.pug')
 })
-export class Story {
+export class Proposal {
   localState: any;
   constructor(public route: ActivatedRoute) {
 
   }
 
   ngOnInit() {
-    new WOW().init();
     this.route
       .data
       .subscribe((data: any) => {
@@ -31,7 +30,7 @@ export class Story {
         this.localState = data.yourData;
       });
 
-    console.log('hello `Story` component');
+    console.log('hello `Proposal` component');
     // static data that is bundled
     // var mockData = require('assets/mock-data/mock-data.json');
     // console.log('mockData', mockData);
