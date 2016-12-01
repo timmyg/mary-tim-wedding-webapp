@@ -51,6 +51,11 @@ declare var ENV: string;
 declare var HMR: boolean;
 declare var System: SystemJS;
 
+declare module "wow.js/dist/wow.js" {
+    var noTypeInfoYet: any;
+    export = noTypeInfoYet;
+}
+
 interface SystemJS {
   import: (path?: string) => Promise<any>;
 }

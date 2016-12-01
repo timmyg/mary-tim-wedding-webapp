@@ -200,7 +200,12 @@ module.exports = function(options) {
         // },
         { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
         // Bootstrap 4
-        { test: /bootstrap\/dist\/js\/umd/, loader: 'imports?jQuery=jquery' }
+        { test: /bootstrap\/dist\/js\/umd/, loader: 'imports?jQuery=jquery' },
+
+        {
+            test: require.resolve('wow.js/dist/wow.js'), 
+            loader: 'exports?this.WOW'
+        }
       ],
 
       // postcss: [autoprefixer], // <--- postcss

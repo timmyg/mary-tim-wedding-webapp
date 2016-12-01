@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 // import { ViewEncapsulation } from '@angular/core';
-import * as WOW from '~wow.js/dist/wow.js';
+import * as WOW from 'wow.js/dist/wow.js';
 
 /*
  * We're loading this component asynchronously
