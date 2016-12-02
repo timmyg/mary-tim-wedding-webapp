@@ -55,6 +55,10 @@ declare var System: SystemJS;
 //     var noTypeInfoYet: any;
 //     export = noTypeInfoYet;
 // }
+// declare module "wow.js" {
+//     var WOW: any;
+//     export = WOW;
+// }
 
 interface SystemJS {
   import: (path?: string) => Promise<any>;
@@ -63,6 +67,7 @@ interface SystemJS {
 interface GlobalEnvironment {
   ENV: string;
   HMR: boolean;
+  WOW: any;
   SystemJS: SystemJS;
   System: SystemJS;
 }
