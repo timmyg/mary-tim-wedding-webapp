@@ -64,7 +64,10 @@ nav.navbar {
       .nav-link {
         color: white;
         font-size: 18px;
-          border-bottom: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+        &:hover, &:focus {
+          color: white;
+        }
         &.active {
           border-bottom-color: white;
         }

@@ -1,10 +1,10 @@
 @import '../app.images';
 
 section {
-  background-image: $img-field;
-  background-size: cover;
-  background-position-y: -100px;
-  background-repeat: no-repeat;
+  background: $img-field no-repeat right center fixed;
+  // background-size: cover;
+  // background-position-y: -100px;
+  // background-repeat: no-repeat;
 }
 
 footer {
