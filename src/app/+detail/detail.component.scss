@@ -3,3 +3,16 @@
 header {
   background-image: $img-tree;
 }
+
+.party {
+  li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    img {
+      height: 40px;
+    }
+    span {
+      margin-left: 10px;
+    }
+  }
+}
