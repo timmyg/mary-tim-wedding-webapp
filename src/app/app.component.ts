@@ -37,7 +37,7 @@ export class App {
   }
 
   isDarkHeader() {
-    return this.router.url === '/details';
+    return this.router.url === '/details' || this.router.url === '/the-proposal';
   }
 
 }
