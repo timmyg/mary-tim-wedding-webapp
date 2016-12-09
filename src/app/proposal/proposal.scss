@@ -1,4 +1,7 @@
 @import '../app.images';
+@import '~bootstrap/scss/_variables.scss';
+@import '~bootstrap/scss/mixins/_breakpoints.scss';
+
 
 header {
   background-image: $img-kiss;
@@ -18,4 +21,10 @@ object.video {
   float: none;
   clear: both;
   margin: 2px auto;
+}
+
+@include media-breakpoint-down(md) {
+  iframe {
+    width: 100%;
+  }
 }

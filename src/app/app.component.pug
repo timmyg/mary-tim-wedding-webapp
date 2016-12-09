@@ -1,21 +1,22 @@
 nav.navbar.navbar-light([ngClass]="{'bg-light': isLightHeader(), 'bg-dark': isDarkHeader()}")
-  button.navbar-toggler.hidden-lg-up(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
-  #navbarResponsive.collapse.navbar-toggleable-md
-    ul.nav.navbar-nav.col-lg-5.d-inline-block.text-lg-right
-      li.nav-item.float-lg-right
-        a.nav-link.text-fancy-alternate([routerLink]="['./our-story']" routerLinkActive='active') Our Story
-      li.nav-item.float-lg-right
-        a.nav-link.text-fancy-alternate([routerLink]="['./our-wedding']" routerLinkActive='active') Our Wedding
-      li.nav-item.float-lg-right
-        a.nav-link.text-fancy-alternate([routerLink]="['./the-proposal']" routerLinkActive='active') The Proposal
-    div.navbar-nav.col-lg-2.d-inline-block.text-lg-center
-      a([href]='url').h2.text-white.text-fancy Mary + Tim
-    ul.nav.navbar-nav.col-lg-5.d-inline-block.text-lg-left
-      li.nav-item
-        a.nav-link.text-fancy-alternate([routerLink]="['./details']" routerLinkActive='active') Details
-      li.nav-item
-        a.nav-link.text-fancy-alternate([routerLink]="['./registry']" routerLinkActive='active') Registry
-      li.nav-item
-        a.nav-link.text-fancy-alternate([routerLink]="['./photos']" routerLinkActive='active') Photos
+  div.burger-wrapper
+    button.navbar-toggler.hidden-lg-up(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+    #navbarResponsive.collapse.navbar-toggleable-md
+      ul.nav.navbar-nav.col-lg-5.d-inline-block.text-lg-right
+        li.nav-item.float-lg-right
+          a.nav-link.text-fancy-alternate([routerLink]="['./our-story']" routerLinkActive='active') Our Story
+        li.nav-item.float-lg-right
+          a.nav-link.text-fancy-alternate([routerLink]="['./our-wedding']" routerLinkActive='active') Our Wedding
+        li.nav-item.float-lg-right
+          a.nav-link.text-fancy-alternate([routerLink]="['./the-proposal']" routerLinkActive='active') The Proposal
+      div.navbar-nav.col-lg-2.d-inline-block.text-lg-center
+        a([href]='url').h2.text-white.text-fancy Mary + Tim
+      ul.nav.navbar-nav.col-lg-5.d-inline-block.text-lg-left
+        li.nav-item
+          a.nav-link.text-fancy-alternate([routerLink]="['./details']" routerLinkActive='active') Details
+        li.nav-item
+          a.nav-link.text-fancy-alternate([routerLink]="['./registry']" routerLinkActive='active') Registry
+        li.nav-item
+          a.nav-link.text-fancy-alternate([routerLink]="['./photos']" routerLinkActive='active') Photos
 main
   router-outlet
