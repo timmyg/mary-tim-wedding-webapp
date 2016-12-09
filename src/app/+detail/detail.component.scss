@@ -4,18 +4,22 @@ header {
   background-image: $img-tree;
 }
 
-.party {
-  li {
-    font-size: 18px;
-    margin-bottom: 15px;
-    img {
-      height: 100px;
-    }
-    .who {
-      font-size: 28px;
-    }
-    .what {
-      padding-left: 10px;
-    }
-  }
+.title {
+  position: absolute;
+  right: 6%;
+  bottom: 2%;
+  color: white !important;
+  font-size: 16px;
+  background: rgba(179,179,179, 0.5);
+  padding: 3px;
+  border-radius: 4px;
+}
+
+.pic {
+  height: 260px;
+  overflow: hidden;
+  // img {
+  //   height: 100%;
+  //   width: inherit;
+  // }
 }

@@ -11,3 +11,19 @@ div {
 img {
   height: 220px;
 }
+
+.party {
+  li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    img {
+      height: 100px;
+    }
+    .who {
+      font-size: 28px;
+    }
+    .what {
+      padding-left: 10px;
+    }
+  }
+}
