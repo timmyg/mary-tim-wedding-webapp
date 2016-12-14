@@ -20,6 +20,10 @@ $font-fancy-alternate: 'IM Fell Double Pica SC';
   font-family: $font-fancy-alternate;
 }
 
+.text-muted {
+  color: #5b6368!important;
+}
+
 a {
   text-decoration: none;
   &:hover {
@@ -42,9 +46,12 @@ header {
 
 @include media-breakpoint-down(md) {
   div.burger-wrapper {
-    background: rgba(255,255,255,.5);
+    background: rgba(255,255,255,.3);
     border-radius: 5px;
     display: inline-block;
+  }
+  header {
+    background-position-x: 50%;
   }
 }
 @include media-breakpoint-up(md) {

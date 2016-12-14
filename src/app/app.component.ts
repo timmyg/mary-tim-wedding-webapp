@@ -37,7 +37,11 @@ export class App {
   }
 
   isDarkHeader() {
-    return this.router.url === '/details' || this.router.url === '/the-proposal';
+    return this.router.url === '/details' || this.router.url === '/the-proposal' || this.router.url === '/our-story';
+  }
+
+  closeOnClick() {
+    (<any>$("#navbarResponsive")).collapse('hide');
   }
 
 }
