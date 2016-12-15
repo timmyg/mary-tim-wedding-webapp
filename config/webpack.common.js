@@ -203,8 +203,27 @@ module.exports = function(options) {
         { test: /bootstrap\/dist\/js\/umd/, loader: 'imports?jQuery=jquery' },
 
         {
-            test: require.resolve('wow.js/dist/wow.js'), 
+            test: require.resolve('wow.js/dist/wow.js'),
             loader: 'exports?this.WOW'
+        },
+
+        {
+          test: /.*\.(gif|png|jpe?g|svg)$/i,
+          loaders: [
+            'file-loader',
+            {
+              loader: 'image-webpack',
+              query: {
+                progressive: true,
+                optimizationLevel: 7,
+                interlaced: false,
+                pngquant: {
+                  quality: '65-90',
+                  speed: 4
+                }
+              }
+            }
+          ]
         }
       ],
 
