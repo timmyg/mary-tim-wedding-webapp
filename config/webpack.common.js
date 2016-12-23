@@ -24,7 +24,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
  */
 const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
-  title: 'Mary + Tim Giblin Wedding',
+  title: 'Mary and Tim Giblin Wedding',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
