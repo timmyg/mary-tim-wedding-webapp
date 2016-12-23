@@ -25,6 +25,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
   title: 'Mary and Tim Giblin Wedding',
+  description: 'Mary Schott and Tim Giblin Wedding site, Registry, Details, Photos and more.',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };
