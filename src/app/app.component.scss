@@ -54,6 +54,8 @@ header {
     background-position-x: 50%;
   }
   .navbar-nav {
+    margin-top: 0!important;
+    margin-bottom: 0!important;
     .nav-link {
       display: inline-block!important;
     }
@@ -68,7 +70,7 @@ header {
     #navbarResponsive.in {
       .logo {
         position: fixed;
-        top: 300px;
+        top: 275px;
         font-size: 10px;
         left: 190px;
         a {
