@@ -12,6 +12,13 @@ section {
   }
 }
 
+@include media-breakpoint-down(xs) {
+  section {
+    background: $img-entrance no-repeat center center fixed;
+    background-size: cover;
+  }
+}
+
 footer {
   position: absolute;
   bottom: 0;
