@@ -329,14 +329,22 @@ module.exports = function(options) {
       }], {
         ignore: [
           'humans.txt',
-          'robots.txt'
+          'robots.txt',
+          'mainfest.json',
+          'sitemap.xml'
         ]
       }),
       new CopyWebpackPlugin([{
         from: 'src/assets/robots.txt'
       }, {
         from: 'src/assets/humans.txt'
-      }]),
+      }, {
+        from: 'src/assets/mainfest.json'
+      }
+      }, {
+        from: 'src/assets/sitemap.xml'
+      }
+    ]),
 
       /*
        * Plugin: HtmlWebpackPlugin
