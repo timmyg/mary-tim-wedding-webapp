@@ -340,7 +340,6 @@ module.exports = function(options) {
         from: 'src/assets/humans.txt'
       }, {
         from: 'src/assets/mainfest.json'
-      }
       }, {
         from: 'src/assets/sitemap.xml'
       }
