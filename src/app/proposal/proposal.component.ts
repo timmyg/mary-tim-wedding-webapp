@@ -7,7 +7,6 @@ import { ActivatedRoute } from '@angular/router';
  * see https://github.com/gdi2290/es6-promise-loader for more info
  */
 
-console.log('`Story` component loaded asynchronously');
 
 @Component({
   selector: 'proposal',
@@ -30,10 +29,8 @@ export class Proposal {
         this.localState = data.yourData;
       });
 
-    console.log('hello `Proposal` component');
     // static data that is bundled
     // var mockData = require('assets/mock-data/mock-data.json');
-    // console.log('mockData', mockData);
     // if you're working with mock data you can also use http.get('assets/mock-data/mock-data.json')
     this.asyncDataWithWebpack();
   }
@@ -45,7 +42,6 @@ export class Proposal {
 
       System.import('../../assets/mock-data/mock-data.json')
         .then(json => {
-          console.log('async mockData', json);
           this.localState = json;
         });
 

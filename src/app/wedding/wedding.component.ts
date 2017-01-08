@@ -7,7 +7,6 @@ import { ActivatedRoute } from '@angular/router';
  * see https://github.com/gdi2290/es6-promise-loader for more info
  */
 
-console.log('`Wedding` component loaded asynchronously');
 
 @Component({
   selector: 'wedding',

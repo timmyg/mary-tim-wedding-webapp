@@ -29,7 +29,7 @@ export class App {
   }
 
   ngOnInit() {
-    console.log('Initial App State', this.appState.state);
+    console.log('Wow you are pretty cool');
   }
 
   isLightHeader() {

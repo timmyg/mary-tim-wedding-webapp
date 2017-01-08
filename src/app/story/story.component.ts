@@ -9,7 +9,6 @@ declare var WOW: any;
  * see https://github.com/gdi2290/es6-promise-loader for more info
  */
 
-console.log('`Story` component loaded asynchronously');
 
 @Component({
   selector: 'story',

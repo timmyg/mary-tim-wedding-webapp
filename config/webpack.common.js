@@ -25,7 +25,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HMR = helpers.hasProcessFlag('hot');
 const METADATA = {
   title: 'Mary and Tim Giblin Wedding',
-  description: 'Mary Schott and Tim Giblin Wedding site, Registry, Details, Photos and more.',
+  description: 'Wedding website for Mary Schott and Tim Giblin in Cincinnati, OH on April 22, 2017 - including registry, details, photos and more.',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };

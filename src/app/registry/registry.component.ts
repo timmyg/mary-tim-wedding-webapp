@@ -10,7 +10,6 @@ declare var WOW: any;
  * see https://github.com/gdi2290/es6-promise-loader for more info
  */
 
-console.log('`Registry` component loaded asynchronously');
 
 @Component({
   selector: 'registry',
