@@ -2,31 +2,33 @@
  * @author: @AngularClass
  */
 
-const webpack = require('webpack');
-const helpers = require('./helpers');
+const webpack = require("webpack");
+const helpers = require("./helpers");
 
 /*
  * Webpack Plugins
  */
 // problem with copy-webpack-plugin
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
-const HtmlElementsPlugin = require('./html-elements-plugin');
-const AssetsPlugin = require('assets-webpack-plugin');
-const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
-const ProvidePlugin = require('webpack/lib/ProvidePlugin');
-const autoprefixer = require('autoprefixer');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ForkCheckerPlugin = require("awesome-typescript-loader")
+  .ForkCheckerPlugin;
+const HtmlElementsPlugin = require("./html-elements-plugin");
+const AssetsPlugin = require("assets-webpack-plugin");
+const ContextReplacementPlugin = require("webpack/lib/ContextReplacementPlugin");
+const ProvidePlugin = require("webpack/lib/ProvidePlugin");
+const autoprefixer = require("autoprefixer");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 /*
  * Webpack Constants
  */
-const HMR = helpers.hasProcessFlag('hot');
+const HMR = helpers.hasProcessFlag("hot");
 const METADATA = {
-  title: 'Mary and Tim Giblin Wedding',
-  description: 'Wedding website for Mary Schott and Tim Giblin in Cincinnati, OH on April 22, 2017 - including registry, details, photos and more.',
-  baseUrl: '/',
+  title: "Julie and Holton Witchger Wedding",
+  description:
+    "Wedding website for Julie Schott and Holton Witchger in Cincinnati, OH on July 7, 2018 - including registry, details, photos and more.",
+  baseUrl: "/",
   isDevServer: helpers.isWebpackDevServer()
 };
 
@@ -36,9 +38,8 @@ const METADATA = {
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
 module.exports = function(options) {
-  isProd = options.env === 'production';
+  isProd = options.env === "production";
   return {
-
     /*
      * Static metadata for index.html
      *
@@ -53,7 +54,7 @@ module.exports = function(options) {
      *
      * See: http://webpack.github.io/docs/configuration.html#cache
      */
-     //cache: false,
+    //cache: false,
 
     /*
      * The entry point for the bundle
@@ -62,11 +63,9 @@ module.exports = function(options) {
      * See: http://webpack.github.io/docs/configuration.html#entry
      */
     entry: {
-
-      'polyfills': './src/polyfills.browser.ts',
-      'vendor':    './src/vendor.browser.ts',
-      'main':      './src/main.browser.ts'
-
+      polyfills: "./src/polyfills.browser.ts",
+      vendor: "./src/vendor.browser.ts",
+      main: "./src/main.browser.ts"
     },
 
     /*
@@ -75,17 +74,15 @@ module.exports = function(options) {
      * See: http://webpack.github.io/docs/configuration.html#resolve
      */
     resolve: {
-
       /*
        * An array of extensions that should be used to resolve modules.
        *
        * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
        */
-      extensions: ['', '.ts', '.js', '.json', '.scss'],
+      extensions: ["", ".ts", ".js", ".json", ".scss"],
 
       // An array of directory names to be resolved to the current directory
-      modules: [helpers.root('src'), 'node_modules'],
-
+      modules: [helpers.root("src"), "node_modules"]
     },
 
     /*
@@ -94,7 +91,6 @@ module.exports = function(options) {
      * See: http://webpack.github.io/docs/configuration.html#module
      */
     module: {
-
       /*
        * An array of applied pre and post loaders.
        *
@@ -103,15 +99,15 @@ module.exports = function(options) {
       preLoaders: [
         {
           test: /\.ts$/,
-          loader: 'string-replace-loader',
+          loader: "string-replace-loader",
           query: {
-            search: '(System|SystemJS)(.*[\\n\\r]\\s*\\.|\\.)import\\((.+)\\)',
-            replace: '$1.import($3).then(mod => (mod.__esModule && mod.default) ? mod.default : mod)',
-            flags: 'g'
+            search: "(System|SystemJS)(.*[\\n\\r]\\s*\\.|\\.)import\\((.+)\\)",
+            replace:
+              "$1.import($3).then(mod => (mod.__esModule && mod.default) ? mod.default : mod)",
+            flags: "g"
           },
-          include: [helpers.root('src')]
-        },
-
+          include: [helpers.root("src")]
+        }
       ],
 
       /*
@@ -123,7 +119,6 @@ module.exports = function(options) {
        * See: http://webpack.github.io/docs/configuration.html#module-loaders
        */
       loaders: [
-
         /*
          * Typescript loader support for .ts and Angular 2 async routes via .async.ts
          * Replace templateUrl and stylesUrl with require()
@@ -134,9 +129,9 @@ module.exports = function(options) {
         {
           test: /\.ts$/,
           loaders: [
-            '@angularclass/hmr-loader?pretty=' + !isProd + '&prod=' + isProd,
-            'awesome-typescript-loader',
-            'angular2-template-loader'
+            "@angularclass/hmr-loader?pretty=" + !isProd + "&prod=" + isProd,
+            "awesome-typescript-loader",
+            "angular2-template-loader"
           ],
           exclude: [/\.(spec|e2e)\.ts$/]
         },
@@ -148,7 +143,7 @@ module.exports = function(options) {
          */
         {
           test: /\.json$/,
-          loader: 'json-loader'
+          loader: "json-loader"
         },
 
         /*
@@ -158,7 +153,7 @@ module.exports = function(options) {
          */
         {
           test: /\.css$/,
-          loaders: ['to-string-loader', 'css-loader']
+          loaders: ["to-string-loader", "css-loader"]
         },
 
         /* Raw loader support for *.html
@@ -168,21 +163,21 @@ module.exports = function(options) {
          */
         {
           test: /\.html$/,
-          loader: 'raw-loader',
-          exclude: [helpers.root('src/index.html')]
+          loader: "raw-loader",
+          exclude: [helpers.root("src/index.html")]
         },
 
         /* File loader for supporting images, for example, in CSS files.
         */
         {
           test: /\.(jpg|png|gif)$/,
-          loader: 'file'
+          loader: "file"
         },
         {
           test: /\.pug$/,
-          loader: 'pug-html-loader'
+          loader: "pug-html-loader"
         },
-        { test: /\.scss$/, loaders: ['raw-loader','sass-loader'] },
+        { test: /\.scss$/, loaders: ["raw-loader", "sass-loader"] },
         // {
         //   test: /\.scss$/,
         //   exclude: /node_modules/,
@@ -199,27 +194,27 @@ module.exports = function(options) {
         //     '!sass-resources'
         //   )
         // },
-        { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
+        { test: /\.(woff2?|ttf|eot|svg)$/, loader: "url?limit=10000" },
         // Bootstrap 4
-        { test: /bootstrap\/dist\/js\/umd/, loader: 'imports?jQuery=jquery' },
+        { test: /bootstrap\/dist\/js\/umd/, loader: "imports?jQuery=jquery" },
 
         {
-            test: require.resolve('wow.js/dist/wow.js'),
-            loader: 'exports?this.WOW'
+          test: require.resolve("wow.js/dist/wow.js"),
+          loader: "exports?this.WOW"
         },
 
         {
           test: /.*\.(gif|png|jpe?g|svg)$/i,
           loaders: [
-            'file-loader',
+            "file-loader",
             {
-              loader: 'image-webpack',
+              loader: "image-webpack",
               query: {
                 progressive: true,
                 optimizationLevel: 7,
                 interlaced: false,
                 pngquant: {
-                  quality: '65-90',
+                  quality: "65-90",
                   speed: 4
                 }
               }
@@ -233,11 +228,12 @@ module.exports = function(options) {
       postLoaders: [
         {
           test: /\.js$/,
-          loader: 'string-replace-loader',
+          loader: "string-replace-loader",
           query: {
-            search: 'var sourceMappingUrl = extractSourceMappingUrl\\(cssText\\);',
+            search:
+              "var sourceMappingUrl = extractSourceMappingUrl\\(cssText\\);",
             replace: 'var sourceMappingUrl = "";',
-            flags: 'g'
+            flags: "g"
           }
         }
       ]
@@ -250,8 +246,8 @@ module.exports = function(options) {
      */
     plugins: [
       new AssetsPlugin({
-        path: helpers.root('dist'),
-        filename: 'webpack-assets.json',
+        path: helpers.root("dist"),
+        filename: "webpack-assets.json",
         prettyPrint: true
       }),
 
@@ -272,7 +268,7 @@ module.exports = function(options) {
         Scrollspy: "exports?Scrollspy!bootstrap/js/dist/scrollspy",
         Tab: "exports?Tab!bootstrap/js/dist/tab",
         Tooltip: "exports?Tooltip!bootstrap/js/dist/tooltip",
-        Util: "exports?Util!bootstrap/js/dist/util",
+        Util: "exports?Util!bootstrap/js/dist/util"
       }),
 
       /*
@@ -291,7 +287,7 @@ module.exports = function(options) {
        * See: https://github.com/webpack/docs/wiki/optimization#multi-page-app
        */
       new webpack.optimize.CommonsChunkPlugin({
-        name: ['polyfills', 'vendor'].reverse()
+        name: ["polyfills", "vendor"].reverse()
       }),
 
       /**
@@ -304,15 +300,15 @@ module.exports = function(options) {
       new ContextReplacementPlugin(
         // The (\\|\/) piece accounts for path separators in *nix and Windows
         /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-        helpers.root('src') // location of your src
+        helpers.root("src") // location of your src
       ),
 
       new ProvidePlugin({
-          jQuery: 'jquery',
-          $: 'jquery',
-          jquery: 'jquery',
-          "Tether": 'tether',
-          "window.Tether": "tether"
+        jQuery: "jquery",
+        $: "jquery",
+        jquery: "jquery",
+        Tether: "tether",
+        "window.Tether": "tether"
       }),
 
       /*
@@ -323,27 +319,31 @@ module.exports = function(options) {
        *
        * See: https://www.npmjs.com/package/copy-webpack-plugin
        */
-      new CopyWebpackPlugin([{
-        from: 'src/assets',
-        to: 'assets'
-      }], {
-        ignore: [
-          'humans.txt',
-          'robots.txt',
-          'mainfest.json',
-          'sitemap.xml'
-        ]
-      }),
-      new CopyWebpackPlugin([{
-        from: 'src/assets/robots.txt'
-      }, {
-        from: 'src/assets/humans.txt'
-      }, {
-        from: 'src/assets/mainfest.json'
-      }, {
-        from: 'src/assets/sitemap.xml'
-      }
-    ]),
+      new CopyWebpackPlugin(
+        [
+          {
+            from: "src/assets",
+            to: "assets"
+          }
+        ],
+        {
+          ignore: ["humans.txt", "robots.txt", "mainfest.json", "sitemap.xml"]
+        }
+      ),
+      new CopyWebpackPlugin([
+        {
+          from: "src/assets/robots.txt"
+        },
+        {
+          from: "src/assets/humans.txt"
+        },
+        {
+          from: "src/assets/mainfest.json"
+        },
+        {
+          from: "src/assets/sitemap.xml"
+        }
+      ]),
 
       /*
        * Plugin: HtmlWebpackPlugin
@@ -354,8 +354,8 @@ module.exports = function(options) {
        * See: https://github.com/ampedandwired/html-webpack-plugin
        */
       new HtmlWebpackPlugin({
-        template: 'src/index.html',
-        chunksSortMode: 'dependency'
+        template: "src/index.html",
+        chunksSortMode: "dependency"
       }),
 
       /*
@@ -381,9 +381,8 @@ module.exports = function(options) {
        * Dependencies: HtmlWebpackPlugin
        */
       new HtmlElementsPlugin({
-        headTags: require('./head-config.common')
-      }),
-
+        headTags: require("./head-config.common")
+      })
     ],
 
     /*
@@ -393,13 +392,12 @@ module.exports = function(options) {
      * See: https://webpack.github.io/docs/configuration.html#node
      */
     node: {
-      global: 'window',
-      crypto: 'empty',
+      global: "window",
+      crypto: "empty",
       process: true,
       module: false,
       clearImmediate: false,
       setImmediate: false
     }
-
   };
-}
+};

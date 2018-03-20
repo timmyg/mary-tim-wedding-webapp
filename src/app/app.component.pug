@@ -7,16 +7,16 @@ nav.navbar.navbar-light([ngClass]="{'bg-light': isLightHeader(), 'bg-dark': isDa
           a.nav-link.text-fancy-alternate([routerLink]="['./our-story']" routerLinkActive='active' '(click)'='closeOnClick()') Our Story
         li.nav-item.float-lg-right
           a.nav-link.text-fancy-alternate([routerLink]="['./our-wedding']" routerLinkActive='active' '(click)'='closeOnClick()') Our Wedding
-        li.nav-item.float-lg-right
-          a.nav-link.text-fancy-alternate([routerLink]="['./the-proposal']" routerLinkActive='active' '(click)'='closeOnClick()') The Proposal
+        //- li.nav-item.float-lg-right
+        //-   a.nav-link.text-fancy-alternate([routerLink]="['./the-proposal']" routerLinkActive='active' '(click)'='closeOnClick()') The Proposal
       div.navbar-nav.col-lg-2.d-inline-block.text-lg-center.logo
-        a([href]='url' '(click)'='closeOnClick()').h2.text-white.text-fancy Mary + Tim
+        a([href]='url' '(click)'='closeOnClick()').h2.text-white.text-fancy Julie + Holton
       ul.nav.navbar-nav.col-lg-5.d-inline-block.text-lg-left
         li.nav-item
           a.nav-link.text-fancy-alternate([routerLink]="['./details']" routerLinkActive='active' '(click)'='closeOnClick()') Details
         li.nav-item
           a.nav-link.text-fancy-alternate([routerLink]="['./registry']" routerLinkActive='active' '(click)'='closeOnClick()') Registry
-        li.nav-item
-          a.nav-link.text-fancy-alternate([routerLink]="['./photos']" routerLinkActive='active' '(click)'='closeOnClick()') Photos
+        //- li.nav-item
+        //-   a.nav-link.text-fancy-alternate([routerLink]="['./photos']" routerLinkActive='active' '(click)'='closeOnClick()') Photos
 main
   router-outlet
