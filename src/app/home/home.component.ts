@@ -23,8 +23,6 @@ export class Home {
   public timeaway = "bob";
 
   ngOnInit() {
-    this.timeaway = moment("7-7-2018 16:00 EST", "M-D-YYYY HH:mm z").fromNow(
-      true
-    );
+    this.timeaway = moment("7-7-2018 16:00 EST", "M-D-YYYY HH:mm z").fromNow();
   }
 }

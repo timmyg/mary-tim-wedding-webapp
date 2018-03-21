@@ -2,28 +2,28 @@
  * @author: @AngularClass
  */
 
-const helpers = require('./helpers');
-const webpackMerge = require('webpack-merge'); // used to merge webpack configs
-const commonConfig = require('./webpack.common.js'); // the settings that are common to prod and dev
+const helpers = require("./helpers");
+const webpackMerge = require("webpack-merge"); // used to merge webpack configs
+const commonConfig = require("./webpack.common.js"); // the settings that are common to prod and dev
 
 /**
  * Webpack Plugins
  */
-const ProvidePlugin = require('webpack/lib/ProvidePlugin');
-const DefinePlugin = require('webpack/lib/DefinePlugin');
-const NormalModuleReplacementPlugin = require('webpack/lib/NormalModuleReplacementPlugin');
-const IgnorePlugin = require('webpack/lib/IgnorePlugin');
-const DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
-const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
-const WebpackMd5Hash = require('webpack-md5-hash');
+const ProvidePlugin = require("webpack/lib/ProvidePlugin");
+const DefinePlugin = require("webpack/lib/DefinePlugin");
+const NormalModuleReplacementPlugin = require("webpack/lib/NormalModuleReplacementPlugin");
+const IgnorePlugin = require("webpack/lib/IgnorePlugin");
+const DedupePlugin = require("webpack/lib/optimize/DedupePlugin");
+const UglifyJsPlugin = require("webpack/lib/optimize/UglifyJsPlugin");
+const WebpackMd5Hash = require("webpack-md5-hash");
 
 /**
  * Webpack Constants
  */
-const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
-const HOST = process.env.HOST || 'localhost';
+const ENV = (process.env.NODE_ENV = process.env.ENV = "production");
+const HOST = process.env.HOST || "localhost";
 const PORT = process.env.PORT || 8080;
-const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
+const METADATA = webpackMerge(commonConfig({ env: ENV }).metadata, {
   host: HOST,
   port: PORT,
   ENV: ENV,
@@ -31,8 +31,7 @@ const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
 });
 
 module.exports = function(env) {
-  return webpackMerge(commonConfig({env: ENV}), {
-
+  return webpackMerge(commonConfig({ env: ENV }), {
     /**
      * Switch loaders to debug mode.
      *
@@ -46,7 +45,7 @@ module.exports = function(env) {
      * See: http://webpack.github.io/docs/configuration.html#devtool
      * See: https://github.com/webpack/docs/wiki/build-performance#sourcemaps
      */
-    devtool: 'source-map',
+    devtool: "source-map",
 
     /**
      * Options affecting the output of the compilation.
@@ -54,13 +53,12 @@ module.exports = function(env) {
      * See: http://webpack.github.io/docs/configuration.html#output
      */
     output: {
-
       /**
        * The output directory as absolute path (required).
        *
        * See: http://webpack.github.io/docs/configuration.html#output-path
        */
-      path: helpers.root('dist'),
+      path: helpers.root("docs"),
 
       /**
        * Specifies the name of each output file on disk.
@@ -68,7 +66,7 @@ module.exports = function(env) {
        *
        * See: http://webpack.github.io/docs/configuration.html#output-filename
        */
-      filename: '[name].[chunkhash].bundle.js',
+      filename: "[name].[chunkhash].bundle.js",
 
       /**
        * The filename of the SourceMaps for the JavaScript files.
@@ -76,7 +74,7 @@ module.exports = function(env) {
        *
        * See: http://webpack.github.io/docs/configuration.html#output-sourcemapfilename
        */
-      sourceMapFilename: '[name].[chunkhash].bundle.map',
+      sourceMapFilename: "[name].[chunkhash].bundle.map",
 
       /**
        * The filename of non-entry chunks as relative path
@@ -84,8 +82,7 @@ module.exports = function(env) {
        *
        * See: http://webpack.github.io/docs/configuration.html#output-chunkfilename
        */
-      chunkFilename: '[id].[chunkhash].chunk.js'
-
+      chunkFilename: "[id].[chunkhash].chunk.js"
     },
 
     /**
@@ -94,7 +91,6 @@ module.exports = function(env) {
      * See: http://webpack.github.io/docs/configuration.html#plugins
      */
     plugins: [
-
       /**
        * Plugin: WebpackMd5Hash
        * Description: Plugin to replace a standard webpack chunkhash with md5.
@@ -124,12 +120,12 @@ module.exports = function(env) {
        */
       // NOTE: when adding more properties make sure you include them in custom-typings.d.ts
       new DefinePlugin({
-        'ENV': JSON.stringify(METADATA.ENV),
-        'HMR': METADATA.HMR,
-        'process.env': {
-          'ENV': JSON.stringify(METADATA.ENV),
-          'NODE_ENV': JSON.stringify(METADATA.ENV),
-          'HMR': METADATA.HMR,
+        ENV: JSON.stringify(METADATA.ENV),
+        HMR: METADATA.HMR,
+        "process.env": {
+          ENV: JSON.stringify(METADATA.ENV),
+          NODE_ENV: JSON.stringify(METADATA.ENV),
+          HMR: METADATA.HMR
         }
       }),
 
@@ -156,9 +152,8 @@ module.exports = function(env) {
         // }, // debug
         // comments: true, //debug
 
-
         beautify: false, //prod
-        mangle: { screw_ie8 : true, keep_fnames: true }, //prod
+        mangle: { screw_ie8: true, keep_fnames: true }, //prod
         compress: { screw_ie8: true }, //prod
         comments: false //prod
       }),
@@ -172,8 +167,8 @@ module.exports = function(env) {
 
       new NormalModuleReplacementPlugin(
         /angular2-hmr/,
-        helpers.root('config/modules/angular2-hmr-prod.js')
-      ),
+        helpers.root("config/modules/angular2-hmr-prod.js")
+      )
 
       /**
        * Plugin: IgnorePlugin
@@ -196,7 +191,6 @@ module.exports = function(env) {
       //   regExp: /\.css$|\.html$|\.js$|\.map$/,
       //   threshold: 2 * 1024
       // })
-
     ],
 
     /**
@@ -208,7 +202,7 @@ module.exports = function(env) {
     tslint: {
       emitErrors: true,
       failOnHint: true,
-      resourcePath: 'src'
+      resourcePath: "src"
     },
 
     /**
@@ -221,11 +215,7 @@ module.exports = function(env) {
       minimize: true,
       removeAttributeQuotes: false,
       caseSensitive: true,
-      customAttrSurround: [
-        [/#/, /(?:)/],
-        [/\*/, /(?:)/],
-        [/\[?\(?/, /(?:)/]
-      ],
+      customAttrSurround: [[/#/, /(?:)/], [/\*/, /(?:)/], [/\[?\(?/, /(?:)/]],
       customAttrAssign: [/\)?\]?=/]
     },
 
@@ -236,13 +226,12 @@ module.exports = function(env) {
      * See: https://webpack.github.io/docs/configuration.html#node
      */
     node: {
-      global: 'window',
-      crypto: 'empty',
+      global: "window",
+      crypto: "empty",
       process: false,
       module: false,
       clearImmediate: false,
       setImmediate: false
     }
-
   });
-}
+};
