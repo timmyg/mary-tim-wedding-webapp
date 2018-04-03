@@ -4,8 +4,10 @@
 
 section {
   // background: $img-field no-repeat right center fixed;
-  background: $img-pattern repeat right center fixed;
-  background-size: 590px !important;
+  // background: $img-pattern repeat right center fixed;
+  // background-size: 590px !important;
+  background: $img-5506;
+  background-position-y: 60%;
 }
 
 @include media-breakpoint-up(xl) {
