@@ -1,7 +1,15 @@
-@import '../app.images';
+@import "../app.images";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
 
 header {
-  background-image: $img-flowers;
+  background-image: $img-5778;
+}
+
+@include media-breakpoint-down(xs) {
+  header {
+    background-position-x: 100%;
+  }
 }
 
 div {

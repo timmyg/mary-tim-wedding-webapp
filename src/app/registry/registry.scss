@@ -1,7 +1,7 @@
-@import '../app.images';
+@import "../app.images";
 
 header {
-  background-image: $img-silhouettes;
+  background-image: $img-5148;
 }
 
 .coming-soon {
@@ -14,7 +14,7 @@ header {
   bottom: 0;
   right: 0;
   font-size: 60px;
-  &~ div {
-    opacity: .06;
+  & ~ div {
+    opacity: 0.06;
   }
 }

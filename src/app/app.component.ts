@@ -1,49 +1,48 @@
 /*
  * Angular 2 decorators and services
  */
-import { Component, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ViewEncapsulation } from "@angular/core";
+import { Router } from "@angular/router";
 
-import { AppState } from './app.service';
+import { AppState } from "./app.service";
 
 /*
  * App Component
  * Top Level Component
  */
 @Component({
-  selector: 'app',
+  selector: "app",
   encapsulation: ViewEncapsulation.None,
-  styleUrls: [ './app.component.scss' ],
-  template: require('./app.component.pug')
+  styleUrls: ["./app.component.scss"],
+  template: require("./app.component.pug")
 })
 export class App {
   // angularclassLogo = 'assets/img/angularclass-avatar.png';
-  angularclassLogo = 'http://placehold.it/70x70';
-  name = 'Angular 2 Webpack Starter';
-  url = '/#';
+  angularclassLogo = "http://placehold.it/70x70";
+  name = "Angular 2 Webpack Starter";
+  url = "/#";
 
-  constructor(
-    public appState: AppState,
-    public router: Router) {
-
-  }
+  constructor(public appState: AppState, public router: Router) {}
 
   ngOnInit() {
-    console.log('Wow you are pretty cool');
+    console.log("Wow you are pretty cool");
   }
 
   isLightHeader() {
-    return this.router.url === '/registry';
+    return this.router.url === "/registry" || this.router.url === "/";
   }
 
   isDarkHeader() {
-    return this.router.url === '/details' || this.router.url === '/the-proposal' || this.router.url === '/our-story';
+    return (
+      this.router.url === "/details" ||
+      this.router.url === "/the-proposal" ||
+      this.router.url === "/our-story"
+    );
   }
 
   closeOnClick() {
-    (<any>$("#navbarResponsive")).collapse('hide');
+    (<any>$("#navbarResponsive")).collapse("hide");
   }
-
 }
 
 /*

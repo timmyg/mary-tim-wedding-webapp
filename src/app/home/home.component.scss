@@ -1,9 +1,11 @@
-@import '~bootstrap/scss/_variables.scss';
-@import '~bootstrap/scss/mixins/_breakpoints.scss';
-@import '../app.images';
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+@import "../app.images";
 
 section {
-  background: $img-field no-repeat right center fixed;
+  // background: $img-field no-repeat right center fixed;
+  background: $img-pattern repeat right center fixed;
+  background-size: 590px !important;
 }
 
 @include media-breakpoint-up(xl) {
@@ -14,7 +16,7 @@ section {
 
 @include media-breakpoint-down(xs) {
   section {
-    background: $img-entrance no-repeat center center fixed;
+    background: $img-couple no-repeat center center fixed;
     background-size: cover;
   }
 }
