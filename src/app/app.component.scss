@@ -1,15 +1,15 @@
-@import 'app.functions', 'app.mixins', 'app.images';
-$font-primary: 'Raleway'; // Poiret One, Text Me One, IM Fell Double Pica SC
-$font-fancy: 'Dancing Script';
-$font-fancy-alternate: 'IM Fell Double Pica SC';
+@import "app.functions", "app.mixins", "app.images";
+$font-primary: "Raleway"; // Poiret One, Text Me One, IM Fell Double Pica SC
+$font-fancy: "Dancing Script";
+$font-fancy-alternate: "IM Fell Double Pica SC";
 @import url('https://fonts.googleapis.com/css?family=#{str-replace($font-primary, " ", "+")}|#{str-replace($font-fancy, " ", "+")}|#{str-replace($font-fancy-alternate, " ", "+")}');
-@import '~bootstrap/scss/_variables.scss';
-@import '~bootstrap/scss/mixins/_breakpoints.scss';
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
 
 * {
   font-family: $font-primary;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke: .6px #fff;
+  -webkit-text-stroke: 0.6px #fff;
 }
 
 .text-fancy {
@@ -21,16 +21,17 @@ $font-fancy-alternate: 'IM Fell Double Pica SC';
 }
 
 .text-muted {
-  color: #5b6368!important;
+  color: #5b6368 !important;
 }
 
 a {
   text-decoration: none;
   &:hover {
-    opacity: .8;
+    opacity: 0.8;
     // color: white;
   }
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     text-decoration: none;
     outline: none;
   }
@@ -46,7 +47,7 @@ header {
 
 @include media-breakpoint-down(md) {
   div.burger-wrapper {
-    background: rgba(255,255,255,.3);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
     display: inline-block;
   }
@@ -54,25 +55,25 @@ header {
     background-position-x: 50%;
   }
   .navbar-nav {
-    margin-top: 0!important;
-    margin-bottom: 0!important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
     .nav-link {
-      display: inline-block!important;
+      display: inline-block !important;
     }
   }
 
   nav.navbar {
     #navbarResponsive:not(.in) {
       .logo {
-        display: none!important;
+        display: none !important;
       }
     }
     #navbarResponsive.in {
       .logo {
         position: fixed;
-        top: 275px;
+        top: 185px;
         font-size: 10px;
-        left: 190px;
+        left: 170px;
         z-index: 99;
         a {
           font-size: 20px;
@@ -85,9 +86,10 @@ header {
   header {
     height: 710px;
   }
-  nav, .nav {
-    padding-left: 0!important;
-    padding-right: 0!important;
+  nav,
+  .nav {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
@@ -99,11 +101,15 @@ nav.navbar {
     outline: none;
   }
   &.bg-light {
-    background: linear-gradient(to bottom, rgba(201,201,201,1), rgba(0,0,0,0));
+    background: linear-gradient(
+      to bottom,
+      rgba(201, 201, 201, 1),
+      rgba(0, 0, 0, 0)
+    );
     padding-bottom: 40px;
   }
   &.bg-dark {
-    background: linear-gradient(to bottom, #565656, rgba(0,0,0,0));
+    background: linear-gradient(to bottom, #565656, rgba(0, 0, 0, 0));
     padding-bottom: 120px;
   }
   .navbar-nav {
@@ -113,7 +119,8 @@ nav.navbar {
         color: white;
         font-size: 18px;
         border-bottom: 2px solid transparent;
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           color: white;
         }
         &.active {
