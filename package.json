@@ -1,18 +1,19 @@
 {
   "name": "angular2-webpack-starter",
   "version": "5.0.5",
-  "description":
-    "An Angular 2 Webpack Starter kit featuring Angular 2 (Router, Http, Forms, Services, Tests, E2E, Coverage), Karma, Protractor, Jasmine, Istanbul, TypeScript, and Webpack by AngularClass",
-  "keywords": ["angular2", "webpack", "typescript"],
+  "description": "An Angular 2 Webpack Starter kit featuring Angular 2 (Router, Http, Forms, Services, Tests, E2E, Coverage), Karma, Protractor, Jasmine, Istanbul, TypeScript, and Webpack by AngularClass",
+  "keywords": [
+    "angular2",
+    "webpack",
+    "typescript"
+  ],
   "author": "Patrick Stapleton <patrick@angularclass.com>",
   "homepage": "https://github.com/angularclass/angular2-webpack-starter",
   "license": "MIT",
   "scripts": {
     "build:dev": "webpack --config config/webpack.dev.js --progress --profile",
-    "build:docker":
-      "npm run build:prod && docker build -t angular2-webpack-start:latest .",
-    "build:prod":
-      "webpack --config config/webpack.prod.js  --progress --profile --bail",
+    "build:docker": "npm run build:prod && docker build -t angular2-webpack-start:latest .",
+    "build:prod": "webpack --config config/webpack.prod.js  --progress --profile --bail",
     "build": "npm run build:dev",
     "ci": "npm run lint && npm test && npm run e2e",
     "clean:docs": "npm run rimraf -- docs",
@@ -20,14 +21,11 @@
     "clean:start": "npm start",
     "clean": "yarn upgrade",
     "docker": "docker",
-    "docs":
-      "npm run typedoc -- --options typedoc.json --exclude '**/*.spec.ts' ./src/",
+    "docs": "npm run typedoc -- --options typedoc.json --exclude '**/*.spec.ts' ./src/",
     "e2e:live": "npm run e2e -- --elementExplorer",
     "e2e": "npm run protractor",
-    "github-deploy:dev":
-      "webpack --config config/webpack.github-deploy.js --progress --profile --github-dev",
-    "github-deploy:prod":
-      "webpack --config config/webpack.github-deploy.js --progress --profile --github-prod",
+    "github-deploy:dev": "webpack --config config/webpack.github-deploy.js --progress --profile --github-dev",
+    "github-deploy:prod": "webpack --config config/webpack.github-deploy.js --progress --profile --github-prod",
     "github-deploy": "npm run github-deploy:dev",
     "lint": "npm run tslint \"src/**/*.ts\"",
     "postversion": "git push && git push --tags",
@@ -41,8 +39,7 @@
     "protractor": "protractor",
     "rimraf": "rimraf",
     "server:dev:hmr": "npm run server:dev -- --inline --hot",
-    "server:dev":
-      "webpack-dev-server --config config/webpack.dev.js --quiet --progress  --watch --content-base src/",
+    "server:dev": "webpack-dev-server --config config/webpack.dev.js --quiet --progress  --watch --content-base src/",
     "server:prod": "http-server docs --cors",
     "server": "npm run server:dev",
     "start:hmr": "npm run server:dev:hmr",
@@ -96,6 +93,7 @@
     "@types/node": "^6.0.38",
     "@types/protractor": "^1.5.20",
     "@types/selenium-webdriver": "2.44.29",
+    "@types/source-map": "0.5.0",
     "@types/webpack": "^1.12.34",
     "angular2-template-loader": "^0.5.0",
     "awesome-typescript-loader": "^2.2.1",
@@ -131,7 +129,8 @@
     "resolve-url-loader": "^1.6.0",
     "rimraf": "^2.5.2",
     "sass-loader": "^4.0.2",
-    "source-map-loader": "^0.1.5",
+    "source-map": "^0.7.1",
+    "source-map-loader": "^0.2.3",
     "string-replace-loader": "1.0.5",
     "style-loader": "^0.13.1",
     "to-string-loader": "^1.1.4",
